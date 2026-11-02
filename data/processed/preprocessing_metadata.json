@@ -1,0 +1,54 @@
+{
+    "input_features": {
+        "behavioral": [
+            "pack_years",
+            "secondhand_smoke_exposure"
+        ],
+        "environmental": [
+            "radon_exposure",
+            "asbestos_exposure"
+        ],
+        "clinical": [
+            "age",
+            "copd_diagnosis",
+            "family_history",
+            "gender"
+        ]
+    },
+    "target": "lung_cancer",
+    "target_encoding": {
+        "No": 0,
+        "Yes": 1
+    },
+    "excluded_columns": [
+        "patient_id",
+        "alcohol_consumption"
+    ],
+    "split_sizes": {
+        "train": 34999,
+        "validation": 7501,
+        "test": 7500
+    },
+    "random_state": 42,
+    "test_size": 0.15,
+    "validation_size": 0.15,
+    "transformed_features": [
+        "pack_years",
+        "age",
+        "secondhand_smoke_exposure_No",
+        "secondhand_smoke_exposure_Yes",
+        "radon_exposure_High",
+        "radon_exposure_Low",
+        "radon_exposure_Medium",
+        "asbestos_exposure_No",
+        "asbestos_exposure_Yes",
+        "copd_diagnosis_No",
+        "copd_diagnosis_Yes",
+        "family_history_No",
+        "family_history_Yes",
+        "gender_Female",
+        "gender_Male"
+    ],
+    "transformed_feature_count": 15,
+    "note": "Numeric features are standardized and categorical features are one-hot encoded. Transformations are fitted on training data only. No imbalance handling is applied."
+}
